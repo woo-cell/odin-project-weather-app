@@ -1,0 +1,22 @@
+{
+  "name": "webpack-vanilla-js-template",
+  "version": "1.0.0",
+  "description": "webpack html css js eslinter prettier template",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch --config ./webpack.dev.js",
+    "build": "webpack --config ./webpack.prod.js"
+  },
+  "author": "Woo-Cell",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "3.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.10.0"
+  }
+}
