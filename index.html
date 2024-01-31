@@ -8,6 +8,71 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="search-container">
+        <form action="">
+            <label for="city-input">
+                <input type="text" name="city-input" id="city-input">
+            </label>
+            <select name="units" id="units">
+                <option value="metric" selected>°C</option>
+                <option value="imperial">°F</option>
+            </select>
+
+            <button id="serch-button">search</button>
+        </form>
+    </div>
+    <div class="weather-now-container">
+        <div class="main-infos-container">
+            <div class="city">
+                <h2 class="city-name">Antananarivo, <br> Madagascar</h2>
+                <img src="" alt="">
+            </div>
+            <div class="temperature-now">
+                <h1 class="temp">31°C</h1>
+                <p class="feels-like">feels like 30°C</p>
+            </div>
+            <div class="info-now">
+                <p class="desc">few clouds</p>
+                <img src="../mockup/res/10d@2x.png" alt="">
+                <p class="date">30 jan 2024, 11:14</p>
+            </div>
+        </div>
+        <div class="other-infos-container">
+            <p class="pressure">pressure: 1000hPa</p>
+            <p class="humidity">humidity: 67%</p>
+            <p class="cloudiness">cloudiness: 12%</p>
+            <p class="wind">wind: 12km/h</p>
+            <p class="sunrise">sunrise: 04:12</p>
+            <p class="sunset">sunset: 18:37</p>
+        </div>
+    </div>
+    <div class="forecast-container">
+        <h3>Three days forecast</h3>
+        <div class="d-one-container">
+            <div>
+                <p class="date-d-one">31 jan 2024</p>
+                <p class="temp-d-one">30°C</p>
+                <p class="desc-d-one">few clouds</p>
+            </div>
+            <img src="../mockup/res/10d@2x.png" alt="">
+        </div>
+        <div class="d-two-container">
+            <div>
+                <p class="date-d-two">01 fev 2024</p>
+                <p class="temp-d-two">30°C</p>
+                <p class="desc-d-two">few clouds</p>
+            </div>
+            <img src="../mockup/res/10d@2x.png" alt="">
+        </div>
+        <div class="d-three-container">
+            <div>
+                <p class="date-d-three">02 fev 2024</p>
+                <p class="temp-d-three">30°C</p>
+                <p class="desc-d-three">few clouds</p>
+            </div>
+            <img src="../mockup/res/10d@2x.png" alt="">
+        </div>
+    </div>
     <script src="./main.js" defer></script>
 </body>
 </html>
