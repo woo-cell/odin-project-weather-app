@@ -35,7 +35,7 @@ export default class Ui {
     const feels = document.querySelector(".feels-like");
 
     temp.textContent = `${this.obj.list[0].main.temp} ${
-      units === "metric" ? "°C" : "°F"
+      this.units === "metric" ? "°C" : "°F"
     }`;
 
     feels.textContent = `feels like ${this.obj.list[0].main.feels_like} ${
