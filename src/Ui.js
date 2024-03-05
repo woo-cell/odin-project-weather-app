@@ -229,35 +229,6 @@ export default class Ui {
         imgPlusThree.alt = descriptionDayPlusThree;
     }
 
-    getForecastElements() {
-        const datePlusOne = document.querySelector(".date-d-one");
-        const tempPlusOne = document.querySelector(".temp-d-one");
-        const descPlusOne = document.querySelector(".desc-d-one");
-        const imgPlusOne = document.querySelector(".img-d-one");
-        const datePlusTwo = document.querySelector(".date-d-two");
-        const tempPlusTwo = document.querySelector(".temp-d-two");
-        const descPlusTwo = document.querySelector(".desc-d-two");
-        const imgPlusTwo = document.querySelector(".img-d-two");
-        const datePlusThree = document.querySelector(".date-d-three");
-        const tempPlusThree = document.querySelector(".temp-d-three");
-        const descPlusThree = document.querySelector(".desc-d-three");
-        const imgPlusThree = document.querySelector(".img-d-three");
-        return {
-            datePlusOne,
-            tempPlusOne,
-            descPlusOne,
-            imgPlusOne,
-            datePlusTwo,
-            tempPlusTwo,
-            descPlusTwo,
-            imgPlusTwo,
-            datePlusThree,
-            tempPlusThree,
-            descPlusThree,
-            imgPlusThree
-        };
-    }
-
     static populateCountry(objCountry, objCity) {
         const country = objCountry.filter(
           (countryInData) => countryInData.cca2 === objCity[0].country,
