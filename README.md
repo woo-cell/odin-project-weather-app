@@ -14,5 +14,5 @@ A weather map allowing users to get weather infos and 3 days forecast for a loca
 <br>
 <br>
 
-The app is live [here](https://woo-cell.github.io/weather-app/).
+The app is live [here](https://woo-cell.github.io/odin-project-weather-app/).
 
