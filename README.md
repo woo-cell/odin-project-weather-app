@@ -1,5 +1,5 @@
-# Weather map
-A weather map allowing users to get weather infos and 3 days forecast for a location. This project is part of [The Odin Project](https://www.theodinproject.com/) curriculum.
+# Weather app
+A weather app allowing users to get weather infos and 3 days forecast for a location. This project is part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
 ## Technologies used
 
