@@ -3,6 +3,7 @@ export default class Url {
         this.openWeatherBaseUrl = `https://api.openweathermap.org`;
         this.key = `8d3ddf6f7bb003167b9c01b888993ef4`;
         this.restcountriesBaseUrl = `https://restcountries.com/v3.1/name`;
+        this.iconBaseUrl = `https://openweathermap.org/img/wn`;
     }
 
     getGeocodeUrl(cityName) {
@@ -15,5 +16,9 @@ export default class Url {
 
     getRestcountriesUrl(country) {
         return `${this.restcountriesBaseUrl}/${country}`;
+    }
+
+    getIconUrl(iconId) {
+        return `${this.iconBaseUrl}/${iconId}@2x.png`;
     }
 }

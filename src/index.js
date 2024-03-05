@@ -6,14 +6,11 @@ const cityInput = document.getElementById("city-input");
 const unitInput = document.getElementById("units");
 const searchButton = document.getElementById("search-button");
 
-// fetch city data
+// fetch the city data
 async function geoCodeCity(name) {
   const url = new Url();
   try {
-    const response = await fetch(
-      url.getGeocodeUrl(name),
-      { mode: "cors" },
-    );
+    const response = await fetch(url.getGeocodeUrl(name), { mode: "cors" });
     const cityData = await response.json();
     return cityData;
   } catch (error) {
@@ -21,13 +18,13 @@ async function geoCodeCity(name) {
   }
 }
 
+// fetch the country name
 async function getCountryName(country) {
   const url = new Url();
   try {
-    const countryResponse = await fetch(
-      url.getRestcountriesUrl(country),
-      { mode: "cors"}
-    );
+    const countryResponse = await fetch(url.getRestcountriesUrl(country), {
+      mode: "cors",
+    });
     const countryData = await countryResponse.json();
     return countryData;
   } catch (error) {
@@ -35,7 +32,7 @@ async function getCountryName(country) {
   }
 }
 
-// get the forecast
+// fetch the forecast
 async function getForecast(latitude, longitude, units) {
   const url = new Url();
   try {
@@ -50,24 +47,28 @@ async function getForecast(latitude, longitude, units) {
   }
 }
 
-
-// fetch forecast data
+// fetch the forecast data
 async function getForecastData(name, units) {
-  const cityData = await geoCodeCity(name);
-  const forecastData = await getForecast(cityData[0].lat, cityData[0].lon, units)
-
-  return forecastData;
+  try {
+    const cityData = await geoCodeCity(name);
+    const forecastData = await getForecast(
+      cityData[0].lat,
+      cityData[0].lon,
+      units,
+    );
+    return forecastData;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-// default: osaka - metric
-async function initialize() {
-  const defaultCityName = "osaka";
-  const defaultUnits = "metric";
-  const forecastData = await getForecastData(defaultCityName, defaultUnits);
+// initialize the screen
+async function initialize(cityName, units) {
+  const forecastData = await getForecastData(cityName, units);
   const ui = new Ui(forecastData, units);
   ui.populateUI();
- 
-  const cityData = await geoCodeCity(defaultCityName);
+
+  const cityData = await geoCodeCity(cityName);
   const countryData = await getCountryName(cityData[0].country);
   Ui.populateCountry(countryData, cityData);
 }
@@ -75,19 +76,14 @@ async function initialize() {
 // search button event handler
 searchButton.addEventListener("click", async (e) => {
   e.preventDefault();
-    const cityName = cityInput.value;
-    const units = unitInput.value;
+  const cityName = cityInput.value;
+  const units = unitInput.value;
   if (cityName) {
-    const forecastData = await getForecastData(cityName, units);
-    const ui = new Ui(forecastData, units);
-    ui.populateUI();
-
-    const cityData = await geoCodeCity(cityName);
-    const countryData = await getCountryName(cityData[0].country);
-    Ui.populateCountry(countryData, cityData);
+    initialize(cityName, units);
   } else {
-    initialize();
+    initialize("osaka", "metric");
   }
 });
 
-initialize();
+// default: osaka - metric
+initialize("osaka", "metric");
